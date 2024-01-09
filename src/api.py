@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load CSV data
-csv_path = "/Users/nguyenphucthanh/Downloads/price_optimization/data/retail_price.csv"
+csv_path = "data/retail_price.csv"
 data = pd.read_csv(csv_path)
 
 @app.route("/api/ids/<category>", methods=["GET"])
