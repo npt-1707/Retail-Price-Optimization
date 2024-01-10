@@ -11,7 +11,7 @@ data = pd.read_csv(csv_path)
 
 @app.route("/api/ids/<category>", methods=["GET"])
 def get_ids(category):
-    if category == "":
+    if not category:
         ids = list(data["product_id"].unique())
         return jsonify(ids)
     else:
@@ -21,7 +21,7 @@ def get_ids(category):
 
 @app.route("/api/categories/<id>", methods=["GET"])
 def get_categories(id):
-    if id == "":
+    if not id:
         categories = list(data["product_category_name"].unique())
         return jsonify(categories)
     else:
